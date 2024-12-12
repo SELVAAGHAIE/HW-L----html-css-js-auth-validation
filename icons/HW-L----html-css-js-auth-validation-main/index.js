@@ -71,16 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
             usernameError.style.display = 'none';
         }
 
-        if (email.trim() === '') {
-            emailError.textContent = 'Email cannot be empty';
-            emailError.style.display = 'block';
-            validate = false;
-        }
-        else if (!validateEmail(email)) {
+        if (!validateEmail(email)) {
             emailError.textContent = 'Invalid email address';
             emailError.style.display = 'block';
-            validate = false;}
-        else {
+            validate = false;
+        } else {
             emailError.style.display = 'none';
         }
 
@@ -113,5 +108,4 @@ document.addEventListener('DOMContentLoaded', () => {
         const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
         return re.test(password);
     }
-
 });
