@@ -15,4 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
             validateRegisterForm();
         });
     }
+    
+    function validateLoginForm() {
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+        const emailError = document.getElementById('loginEmailError');
+        const passwordError = document.getElementById('loginPasswordError');
+        let valid = true;
+    }
 });
