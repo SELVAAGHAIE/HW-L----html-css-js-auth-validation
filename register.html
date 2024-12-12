@@ -10,7 +10,42 @@
     <div>
         <div class="gridContainer">
             <div class="leftImage"></div>
-            <div class="rightForm"></div>
+            <div class="rightForm">
+                <h1>Sign up</h1>
+                <form id="registerForm">
+                    <div class="inputGroup">
+                        <label for="username">Full name</label>
+                        <div class="inputIcon">
+                            <img src="icons/icons8-user-50.png">
+                            <input type="text" id="username" placeholder="enter your full name" >
+                        </div>
+                        <span class="error" id="usernameError"></span>
+                    </div>
+                    <div class="inputGroup">
+                        <label for="registerEmail">Email address</label>
+                        <div class="inputIcon">
+                            <img src="icons/icons8-email-48.png">
+                            <input type="email" id="registerEmail" placeholder="enter your email" >
+                        </div>
+                        <span class="error" id="registerEmailError"></span>
+                    </div>
+                    <div class="inputGroup">
+                        <label for="registerPassword">Set password</label>
+                        <div class="inputIcon">
+                            <img src="icons/icons8-lock-32.png">
+                            <input type="password" id="registerPassword" placeholder="enter password">
+                        </div>
+                        <span class="error" id="registerPasswordError"></span>
+                        <div class="inputIcon">
+                            <img src="icons/icons8-lock-32.png">
+                            <input type="password" id="confirmPassword"  placeholder="confirmPassword">
+                        </div>
+                        <span class="error" id="confirmPasswordError"></span>
+                    </div>
+                    <button type="submit">Sign up</button>
+                    <p>Already have an IPMinter account? <a href="login.html">login</a></p>
+                </form>
+            </div>
         </div>
     </div> 
 </body>
