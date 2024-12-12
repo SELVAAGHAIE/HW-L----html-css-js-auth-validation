@@ -125,6 +125,27 @@ html{
         font-size: 0.8rem;
         font-weight: 600;
     }
+    .orPart{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 2rem;
+        margin-bottom:2rem;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .lines{
+        border-top: 2px solid #2323239c;
+        width: 30%;
+        height: 2px;
+
+    }
+    .orPart p{
+    font-size: 1.2rem;
+    color: #2323239c;
+    line-height: 0;
+    }
     @media only screen and (max-width: 650px) {
         .gridContainer {
             display: grid;
