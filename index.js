@@ -35,7 +35,21 @@ document.addEventListener('DOMContentLoaded', () => {
         else {
             emailError.style.display = 'none';
         }
+        if (password.trim() === '') {
+            passwordError.textContent = 'Password cannot be empty';
+            passwordError.style.display = 'block';
+            validate = false;
+        } else if (!validatePassword(password)) {
+            passwordError.textContent = 'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character';
+            passwordError.style.display = 'block';
+            validate = false;
+        }else {
+            passwordError.style.display = 'none';
+        }
 
+        if (validate) {
+            alert('Login successful');
+        }
     }
     function validateEmail(email) {
         const re =/[a-zA-Z0-9.-]+@[a-z-]+\.(com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)/;
