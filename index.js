@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            validateLoginForm();
+            validatingLoginForm();
         });
     }
 
@@ -16,12 +16,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    function validateLoginForm() {
+    function validatingLoginForm() {
         const email = document.getElementById('loginEmail').value;
         const password = document.getElementById('loginPassword').value;
         const emailError = document.getElementById('loginEmailError');
         const passwordError = document.getElementById('loginPasswordError');
-        let valid = true;
+        let validate = true;
+
+        if (email.trim() === '') {
+            emailError.textContent = 'Email cannot be empty';
+            emailError.style.display = 'block';
+            validate = false;
+        }
+        else if (!validateEmail(email)) {
+            emailError.textContent = 'Invalid email address';
+            emailError.style.display = 'block';
+            validate = false;}
+        else {
+            emailError.style.display = 'none';
+        }
+
     }
     function validateEmail(email) {
         const re =/[a-zA-Z0-9.-]+@[a-z-]+\.(com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)/;
