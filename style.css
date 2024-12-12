@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "poppins";
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url(./fonts/Poppins-Regular.ttf),format(ttf);
+}
+html{   
+    width: 100%;
+    height: 100%;
+}
+.gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'leftImage rightForm';
+    width: 100vw;
+    height: 100vh;
+}
+.leftImage{grid-area:leftImage ;
+    background: url("img/image\ 53.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-size: 100% 100%;
+    }
+.rightForm{
+    grid-area: rightForm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 5rem;
+    padding: 40px;
+    }
