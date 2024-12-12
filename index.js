@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (registerForm) {
         registerForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            validateRegisterForm();
+            validatingRegisterForm();
         });
     }
     
@@ -49,6 +49,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (validate) {
             alert('Login successful');
+        }
+    }
+
+    function validatingRegisterForm() {
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('registerEmail').value;
+        const password = document.getElementById('registerPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const usernameError = document.getElementById('usernameError');
+        const emailError = document.getElementById('registerEmailError');
+        const passwordError = document.getElementById('registerPasswordError');
+        const confirmPasswordError = document.getElementById('confirmPasswordError');
+        let validate = true;
+
+        if (username.trim() === '') {
+            usernameError.textContent = 'Username cannot be empty';
+            usernameError.style.display = 'block';
+            validate = false;
+        } else {
+            usernameError.style.display = 'none';
+        }
+
+        if (!validateEmail(email)) {
+            emailError.textContent = 'Invalid email address';
+            emailError.style.display = 'block';
+            validate = false;
+        } else {
+            emailError.style.display = 'none';
+        }
+
+        if (!validatePassword(password)) {
+            passwordError.textContent = 'Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number, and one special character';
+            passwordError.style.display = 'block';
+            validate = false;
+        } else {
+            passwordError.style.display = 'none';
+        }
+
+        if (password !== confirmPassword) {
+            confirmPasswordError.textContent = 'Passwords do not match';
+            confirmPasswordError.style.display = 'block';
+            validate = false;
+        } else {
+            confirmPasswordError.style.display = 'none';
+        }
+
+        if (validate) {
+            alert('Registration successful');
         }
     }
     function validateEmail(email) {
